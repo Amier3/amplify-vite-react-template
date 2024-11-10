@@ -14,12 +14,18 @@ function App() {
   }, []);
 
   function createTodo() {
-    client.models.Todo.create({ content: window.prompt("Todo content") });
+    client.models.Todo.create({ content: window.prompt("Add Email") });
   }
 
   return (
     <main>
       <h1>Welcome to Yort and Associates LLC</h1>
+      <button onClick={createTodo}>Sign up for Newsletter</button>
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id}>{todo.content}</li>
+        ))}
+      </ul>
       <div>
         🥳 This site is temporarily under construction. For further information on Yort and Associates, email info@yortassociates.com
         <br />
